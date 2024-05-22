@@ -1,0 +1,147 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="{{ url_for('index') }}"><h3>Learning App</h3></a> 
+                    <strong>IA</strong>
+                </div>
+            
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Quiz</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('study') }}"><i class="fas fa-book"></i>progress</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('practice') }}"><i class="fas fa-pen"></i>Library</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('profile') }}"><i class="fas fa-user"></i>Quiz</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('faq') }}"><i class="fas fa-question"></i>Practice</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('contact') }}"><i class="fas fa-paper-plane"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </nav>
+<div id="content">
+    <div class="panel panel-default">
+            
+    <!-- Page Content -->
+    <div class="container">
+<div class="container mt-5">
+    <h3>Practice Section</h3>
+    <p>Select a subject, difficulty level, and question type to start practicing:</p>
+    
+    <!-- Form for selecting practice options -->
+    <form>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <select class="form-control" id="subject">
+                <option value="physics">Physics</option>
+                <option value="mathematics">Mathematics</option>
+                <!-- Add more subjects as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="difficulty">Difficulty Level:</label>
+            <select class="form-control" id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="questionType">Question Type:</label>
+            <select class="form-control" id="questionType">
+                <option value="multipleChoice">Multiple Choice</option>
+                <option value="openEnded">Open Ended</option>
+            </select>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="timer">
+            <label class="form-check-label" for="timer">Enable Timer</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Start Practice</button>
+    </form>
+    <!-- Modal for displaying practice questions -->
+<div class="modal fade" id="practiceModal" tabindex="-1" role="dialog" aria-labelledby="practiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="practiceModalLabel">Practice Questions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="practiceQuestions">
+                <!-- Placeholder for practice questions -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- Add a button for submitting answers if needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+         // JavaScript code to handle form submission and fetch practice questions
+    document.getElementById('practiceForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Fetch practice questions based on form data using AJAX
+        // Update #practiceQuestions with the fetched questions
+    });
+
+    // JavaScript code to handle form submission and fetch practice questions
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('practiceForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Fetch practice questions based on form data using AJAX
+            // Update #practiceQuestions with the fetched questions
+            
+            // After fetching and updating practice questions, show the modal
+            $('#practiceModal').modal('show');
+        });
+    });
+
+    </script>
+{% endblock %}
+
+

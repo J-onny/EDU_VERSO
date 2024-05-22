@@ -1,0 +1,215 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="{{ url_for('index') }}"><h3>Learning App</h3></a> 
+                    <strong>IA</strong>
+                </div>
+            
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('study') }}"><i class="fas fa-book"></i>Study</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('practice') }}"><i class="fas fa-pen"></i>Practice</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('profile') }}"><i class="fas fa-user"></i>Profile</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('faq') }}"><i class="fas fa-question"></i>FAQ</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('contact') }}"><i class="fas fa-paper-plane"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #47484B">
+            <i class="fas fa-align-left"></i>
+            <span>Collapse</span>
+        </button>
+
+        <!-- Admin Login Button -->
+        <button type="button" class="btn btn-dark ml-auto style="background-color: #47484B">Admin Login</button>
+    </div>
+</nav>
+
+            <!-- Page Content -->
+            <section class="welcome-section text-center">
+                <h1>Welcome to Intellituts</h1>
+                <p class="lead">A cutting-edge virtual learning platform designed to empower learners of all ages.</p>
+            </section>
+            <section class="subject-area-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="subject-card bgcolor">
+                                <h3>Academic Subjects</h3>
+                                
+            <!-- Additional content for Mathematics subject -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="subject-card bgcolor">
+                                <h3>Scientific Studies</h3>
+          <!-- Additional content for Science subject -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="subject-card bgcolor">
+                                <h3>Linguistic Studies</h3>
+          <!-- Additional content for Languages subject -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h4>Personalized Learning Paths</h4>
+                                <p>Create a customized path tailored to your goals and preferences.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h4>Interactive Simulations</h4>
+                                <p>Engage in realistic simulations to enhance your understanding.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h4>Progress Tracking</h4>
+                                <p>Monitor your progress and set goals for effective learning.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h4>Scenario-based Questions</h4>
+                                <p>Challenge yourself with scenario-based questions for practical learning.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h4>Real-time Grading</h4>
+                                <p>Receive instant feedback and grading on your responses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="access-section text-center bgcolor1">
+                <h2>Ready to start learning?</h2>
+                <div class="button-group">
+                    <a href="signup.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </section>
+            <section class="sample-lessons-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{ url_for('math') }}" class="lesson-link">
+                                <div class="lesson-card">
+                                    <img src="images.jpg" alt="Mathematics">
+                                    <h3>Mathematics</h3>
+                                    <p>Explore both Foundation and Advanced Math concepts.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url_for('physics') }}" class="lesson-link">
+                                <div class="lesson-card bgcolor1">
+                                    <img src="lesson2.jpg" alt="Physics">
+                                    <h3>Physics</h3>
+                                    <p>Discover Foundation and Advanced Physics topics.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url_for('advanced_math') }}" class="lesson-link">
+                                <div class="lesson-card">
+                                    <img src="lesson3.jpg" alt="Advanced Math">
+                                    <h3>Advanced Math</h3>
+                                    <p>Delve into advanced Math concepts and applications.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cta-section">
+                <div class="container text-center">
+                    <h3>Ready to start your learning journey?</h3>
+                    <p>Join thousands of learners already benefitting from our platform.</p>
+                    <p>Our cutting-edge virtual learning platform offers:</p>
+                    <ul class="list-unstyled">
+                        <li>AI assistant for step-by-step responses to math and physics problems</li>
+                        <li>Personalized learning paths</li>
+                        <li>Community engagement</li>
+                        <li>Interactive simulations</li>
+                        <li>Progress tracking</li>
+                        <li>Real-time grading</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="{{ url_for('signup') }}" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </section>
+            
+            
+                     
+            
+                </div>
+        </div>
+    </div>
+    <!-- Jinja template -->
+    <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="static/jquery/jquery.min.js"></script>
+    <script src="static/jquery/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script><!-- Your page-specific content goes here -->
+{% endblock %}
+
+  
+
+
+

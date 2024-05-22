@@ -1,0 +1,130 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('index') }}"><h3>Intellituts App</h3></a>
+                <strong>IA</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="{{ url_for('Dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('request') }}">
+                        <i class="fas fa-image"></i>
+                        Request topic
+                    </a>
+                </li>
+                <li>
+                <a href="{{ url_for('Library') }}">
+                        <i class="fas fa-image"></i>
+                        Library
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('quiz') }}">
+                        <i class="fas fa-image"></i>
+                        Quiz
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('history') }}">
+                        <i class="fas fa-image"></i>
+                        History
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('contact') }}">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="panel panel-default">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #47484B">
+                        <i class="fas fa-align-left"></i>
+                        <span>Collapse</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <h4>Frequently Asked Questions</h4>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about"><em>Place holder</em></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Page Content -->
+                <section class="vh-100 border border-1 rounded" style="background-color: f4f5f7;">
+                    <div class="container py-5 h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">                          
+                            <div class="col-md-6">
+                                <h5>Contents</h5>
+                                <ul >
+                                    <li class="pb-1"><a href="#">Course information</a></li>
+                                    <li class="pb-2"><a href="#">Enrollment &amp; registration</a></li>
+                                    <li class="pb-2"><a href="#">Payment &amp; Billing</a></li>
+                                    <li class="pb-2"><a href="#">Technical support</a></li>
+                                    <li class="pb-2"><a href="#">Progress Tracking</a></li>
+                                    <li class="pb-2"><a href="#">Community interactions</a></li>
+                                    <li class="pb-2"><a href="#">Certificates  &amp; Achievements</a></li>
+                                    <li class="pb-2"><a href="#">Privacy &amp; Data security</a></li>
+                                    <li class="pb-2"><a href="#">Cancellation &amp; Refunds</a></li>
+                                    <li class="pb-2"><a href="#">Technical requirements</a></li>
+                                    <li class="pb-2"><a href="#">Frequently Asked Questions Updates</a></li>
+                                    <li class="pb-2"><a href="#">Contact information</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 border-left">
+                                
+
+                                <h5 style="margin: 8px;">Details</h5>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+{% endblock %}

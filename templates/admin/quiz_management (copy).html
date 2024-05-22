@@ -1,0 +1,107 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <!-- Sidebar content -->
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!-- Navbar content -->
+            <!-- Page content -->
+            <div class="content-wrapper">
+                <div class="container">
+                    <div class="row pad-botm">
+                        <div class="col-md-12">
+                            <h4 class="header-line">ADMIN DASHBOARD</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{ url_for('manage_users') }}">
+                                <div class="alert alert-success back-widget-set text-center">
+                                    <i class="fa fa-book fa-5x"></i>
+                                    <h3><!-- PHP code replaced --></h3>
+                                    Books Listed
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url_for('manage_users') }}">
+                                <div class="alert alert-warning back-widget-set text-center">
+                                    <i class="fa fa-recycle fa-5x"></i>
+                                    <h3><!-- PHP code replaced --></h3>
+                                    Books Not Returned Yet
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url_for('manage_users') }}">
+                                <div class="alert alert-danger back-widget-set text-center">
+                                    <i class="fa fa-users fa-5x"></i>
+                                    <h3><!-- PHP code replaced --></h3>
+                                    Registered Users
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{ url_for('manage_users') }}">
+                                <div class="alert alert-success back-widget-set text-center">
+                                    <i class="fa fa-user fa-5x"></i>
+                                    <h3><!-- PHP code replaced --></h3>
+                                    Authors Listed
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="manage-categories.php">            
+                                <div class="alert alert-info back-widget-set text-center">
+                                    <i class="fa fa-file-archive-o fa-5x"></i>
+                                    <h3><!-- PHP code replaced --></h3>
+                                    Listed Categories
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- Add another column for additional functionality -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page content ends here-->
+            <div class="container mt-4">
+                <!-- Content to be loaded dynamically -->
+                <!-- Centered form -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <!-- You can add more content here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+            // Show the form when "Manage Library" link is clicked
+            
+            
+        });
+    </script>
+{% endblock %}

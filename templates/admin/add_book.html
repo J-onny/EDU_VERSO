@@ -1,0 +1,108 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!--sample -->
+            
+            
+            <!--end of sample -->
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #47484B">
+                        <i class="fas fa-align-left"></i>
+                        <span>Collapse</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+                <!--Right items -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"><i class="fas fa-user"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-gears"></i></a></li>                     
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-bell fa-fw"></i></a></li>                    
+                    </ul> 
+                </div>
+                <!--end of right items -->
+            </nav>
+            <!-- Page Content -->
+            <section class="vh-100" style="background-color: #f4f5f7;">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="card" style="border-radius: .5rem;">
+                                <div class="card-body p-4">
+                                    <h5 class="text-center mb-4"><strong>Manage Library</strong></h5>
+                                    <form method="POST">
+                                        {{ form.hidden_tag() }}
+                                        <div class="form-group">
+                                            {{ form.title.label }}
+                                            {{ form.title(class="form-control") }}
+                                            {% for error in form.title.errors %}
+                                                <small><span style="color: red;">{{ error }}</span></small>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.author.label }}
+                                            {{ form.author(class="form-control") }}
+                                            {% for error in form.author.errors %}
+                                                <small><span style="color: red;">{{ error }}</span></small>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.description.label }}
+                                            {{ form.description(class="form-control") }}
+                                            {% for error in form.description.errors %}
+                                                <small><span style="color: red;">{{ error }}</span></small>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form.url.label }}
+                                            {{ form.url(class="form-control") }}
+                                            {% for error in form.url.errors %}
+                                                <small><span style="color: red;">{{ error }}</span></small>
+                                            {% endfor %}
+                                        </div>
+                                        <!-- Add other form fields here -->
+                                        <button type="submit" class="btn btn-primary btn-block">Add Book</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+{% endblock %}

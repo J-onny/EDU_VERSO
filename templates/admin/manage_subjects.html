@@ -1,0 +1,127 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="#"><h3>Intellituts App</h3></a>
+            <strong>IA</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="{{ url_for('Dashboard') }}">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_library') }}">
+                    Manage Library
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_users') }}">
+                    Manage Users
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_subjects') }}">
+                    Manage Subjects
+                </a>
+            </li>
+            </li>
+            <!-- Add more navigation links for other functionalities -->
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto"> <!-- align to the right -->
+                    <!-- Navbar items -->
+                </ul>
+                <button type="button" class="btn btn-success ml-2" id="addButton">Add</button> <!-- Add button -->
+            </div>
+        </nav>
+
+        <!-- Page content -->
+        <div class="container mt-4">
+            <!-- Form for adding a new subject -->
+            <h4 class="text-center mb-4">Manage Subjects</h4>
+            <form id="addSubjectForm" style="display: none;">
+                <div class="form-group">
+                    <label for="subjectName">Subject Name</label>
+                    <input type="text" class="form-control" id="subjectName" placeholder="Enter subject name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Subject</button>
+            </form>
+            
+            <!-- Table for managing subjects -->
+            <table class="table table-striped mt-4" id="subjectTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Subject Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example row -->
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>Study of numbers, quantity, and space.</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Repeat this row structure for each subject -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"
+    integrity="sha384-fXNys6DifQ/kAq5d9ivSUdmMlqq5BE9sYcuS70+38r38O35/7WJz20vztVVEimxc"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        // Hide the add subject form initially
+        $('#addSubjectForm').hide();
+
+        // Toggle the visibility of the add subject form
+        $('#addButton').click(function () {
+            $('#subjectTable').toggle();
+            $('#addSubjectForm').toggle();
+            // Change the text of the add button based on form visibility
+            if ($('#addSubjectForm').is(':visible')) {
+                $('#addButton').text('Back');
+            } else {
+                $('#addButton').text('Add');
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="#"><h3>Intellituts App</h3></a>
+            <strong>IA</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="{{ url_for('Dashboard') }}">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_library') }}">
+                    Manage Library
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_users') }}">
+                    Manage Users
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_subjects') }}">
+                    Manage Subjects
+                </a>
+            </li>
+                </a>
+            </li>
+            <!-- Add more navigation links for other functionalities -->
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto"> <!-- align to the right -->
+                    <!-- Navbar items -->
+                </ul>
+                <button type="button" class="btn btn-success ml-2" id="addBookButton">Add</button> <!-- Add button -->
+            </div>
+        </nav>
+
+        <!-- Page content -->
+        <div class="container mt-4">
+            <!-- Content to be loaded dynamically -->
+            <!-- Centered form -->
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h4 class="text-center mb-4">Manage Library</h4>
+                    <!-- Form for adding book -->
+                    <form id="addBookForm" method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            <label for="bookName">{{ form.bookName.label }}</label>
+                            {{ form.bookName(class="form-control", placeholder="Enter book name") }}
+                            <span>{{ form.bookName.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">{{ form.category.label }}</label>
+                            {{ form.category(class="form-control", placeholder="Enter category") }}
+                            <span>{{ form.category.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">{{ form.author.label }}</label>
+                            {{ form.author(class="form-control", placeholder="Enter author") }}
+                            <span>{{ form.author.errors }}</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+                    </form>
+                    
+                    
+                    <!-- Table for existing books -->
+                    <table class="table table-striped mt-4" id="bookTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Book Name</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example row -->
+                            <tr>
+                                <td>Book 1</td>
+                                <td>Category 1</td>
+                                <td>Author 1</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Repeat this row structure for each book -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"
+    integrity="sha384-fXNys6DifQ/kAq5d9ivSUdmMlqq5BE9sYcuS70+38r38O35/7WJz20vztVVEimxc"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        // Hide the form initially
+        $('#addBookForm').hide();
+
+        // Toggle the visibility of the add book form
+        $('#addBookButton').click(function () {
+            $('#bookTable').toggle();
+            $('#addBookForm').toggle();
+            // Change the text of the add button based on form visibility
+            if ($('#addBookForm').is(':visible')) {
+                $('#addBookButton').text('Back');
+            } else {
+                $('#addBookButton').text('Add');
+            }
+        });
+    });
+</script>
+{% endblock %}

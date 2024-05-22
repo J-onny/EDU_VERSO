@@ -1,0 +1,160 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('index') }}"><h3>Intellituts App</h3></a>
+                <strong>IA</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="{{ url_for('Dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('manage_library') }}">
+                        <i class="fas fa-book"></i>
+                        Manage Library
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('manage_users') }}">
+                        <i class="fas fa-users"></i>
+                        Manage Users
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('manage_subjects') }}">
+                        <i class="fas fa-book-open"></i>
+                        Manage Subjects
+                    </a>
+                </li>
+              <!---  <li>
+                    <a href="{{ url_for('manage_animations') }}">
+                        <i class="fas fa-film"></i>
+                        Manage Animations
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('manage_quiz') }}">
+                        <i class="fas fa-question"></i>
+                        Manage Quiz
+                    </a>
+                </li> -->
+                <!-- Add more navigation links for other functionalities -->
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!-- Navbar content -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Admin Panel</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- Navbar items -->
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Page content -->
+            <div class="content-wrapper">
+        <div class="container">
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">ADMIN DASHBOARD</h4>
+                </div>
+            </div>
+            <div class="row">
+                <a href="manage-books.php">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="alert alert-success back-widget-set text-center">
+                            <i class="fa fa-book fa-5x"></i>
+                            <h3><!-- PHP code replaced --></h3>
+                            Books Listed
+                        </div>
+                    </div>
+                </a>
+                <a href="manage-issued-books.php">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="alert alert-warning back-widget-set text-center">
+                            <i class="fa fa-recycle fa-5x"></i>
+                            <h3><!-- PHP code replaced --></h3>
+                            Books Not Returned Yet
+                        </div>
+                    </div>
+                </a>
+                <a href="reg-students.php">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="alert alert-danger back-widget-set text-center">
+                            <i class="fa fa-users fa-5x"></i>
+                            <h3><!-- PHP code replaced --></h3>
+                            Registered Users
+                        </div>
+                    </div>
+                </a>
+                <a href="manage-authors.php">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="alert alert-success back-widget-set text-center">
+                            <i class="fa fa-user fa-5x"></i>
+                            <h3><!-- PHP code replaced --></h3>
+                            Authors Listed
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <a href="manage-categories.php">            
+                    <div class="col-md-3 col-sm-3 rscol-xs-6">
+                        <div class="alert alert-info back-widget-set text-center">
+                            <i class="fa fa-file-archive-o fa-5x"></i>
+                            <h3><!-- PHP code replaced --></h3>
+                            Listed Categories
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+            <!-- EOC -->
+            <div class="container mt-4">
+                <!-- Content to be loaded dynamically -->
+                <!-- Centered form -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <!-- You can add more content here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+            // Show the form when "Manage Library" link is clicked
+            
+            
+        });
+    </script>
+{% endblock %}
+

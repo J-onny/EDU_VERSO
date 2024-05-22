@@ -1,0 +1,104 @@
+
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="{{ url_for('index') }}"><h3>Learning App</h3></a> 
+            <strong>IA</strong>
+        </div>
+        
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ url_for('subjects') }}">Subjects</a>
+            </li>
+            <li>
+                <a href="#">Community</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div id="content">
+        <header class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <!--<h4>My Platform</h4>-->
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="row">
+                <div class="col-md-4">
+                    <div class="card profile-overview">
+                        <img src="avatar.png" class="card-img-top" alt="User Avatar">
+                        <div class="card-body">
+                            <h3 class="card-title">John Doe</h3>
+                            <p class="card-text">Bio: Briefly describe yourself here</p>
+                            <button class="btn btn-primary">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <section class="card progress-tracking">
+                        <div class="card-header">
+                            <h4>Progress Overview</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="completed-courses">
+                                <h5>Completed Courses (XX%)</h5>
+                            </div>
+                            <p>Total Time Spent: X hours</p>
+                            <h5>Recent Activity</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">Started Course: Introduction to Programming</li>
+                                <li class="list-group-item">Completed Quiz: Web Development Basics</li>
+                            </ul>
+
+                            <h4>Study Goals</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="goal-type" class="form-label">Set a Goal:</label>
+                                    <select class="form-select" id="goal-type">
+                                        <option value="course-completion">Complete a Course</option>
+                                        <option value="score-improvement">Improve Score on Quiz</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="deadline" class="form-label">Deadline:</label>
+                                    <input type="date" class="form-control" id="deadline">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Goal</button>
+                            </form>
+                            <div class="reminder-toggle">
+                                <label for="reminder-switch" class="form-check-">
+                                    
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container text-center">
+        <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+</footer>
+
+               
+            {% endblock %}

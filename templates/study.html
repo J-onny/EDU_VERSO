@@ -1,0 +1,149 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="{{ url_for('index') }}"><h3>Learning App</h3></a> 
+                    <strong>IA</strong>
+                </div>
+            
+                <ul class="list-unstyled components">
+                    <!--<li class="active">
+                        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Quiz</a>
+                    </li>-->
+                    <li>
+                        <a href="{{ url_for('progress') }}"><i class="fas fa-book"></i>progress</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('Library') }}"><i class="fas fa-pen"></i>Library</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('quiz') }}"><i class="fas fa-user"></i>Quiz</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('practice') }}"><i class="fas fa-question"></i>Practice</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('contact') }}"><i class="fas fa-paper-plane"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </nav>
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="panel panel-default">
+            
+            <!-- Page Content -->
+            <div class="container">
+                <div class="container mt-5">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#ordinaryPhysics">Ordinary Level Physics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#advancedPhysics">Advanced Level Physics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#ordinaryMath">Ordinary Level Mathematics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#advancedMath">Advanced Level Mathematics</a>
+                        </li>
+                    </ul>
+                
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="tab-content">
+                                <div id="ordinaryPhysics" class="tab-pane fade show active">
+                                    <div class="content">
+                                        <h2>Ordinary Level Physics</h2>
+                                        <p>Sample Content:</p>
+                                        <ul>
+                                            <li>Introduction to Mechanics</li>
+                                            <li>Thermal Physics</li>
+                                            <li>Waves and Optics</li>
+                                            <li>Electricity and Magnetism</li>
+                                        </ul>
+                                        <!-- Add more detailed study materials here -->
+                                    </div>
+                                </div>
+                                <div id="advancedPhysics" class="tab-pane fade">
+                                    <div class="content">
+                                        <h2>Advanced Level Physics</h2>
+                                        <p>Sample Content:</p>
+                                        <ul>
+                                            <li>Quantum Mechanics</li>
+                                            <li>Relativity</li>
+                                            <li>Nuclear Physics</li>
+                                            <li>Particle Physics</li>
+                                        </ul>
+                                        <!-- Add more detailed study materials here -->
+                                    </div>
+                                </div>
+                                <div id="ordinaryMath" class="tab-pane fade">
+                                    <div class="content">
+                                        <h2>Ordinary Level Mathematics</h2>
+                                        <p>Sample Content:</p>
+                                        <ul>
+                                            <li>Algebra</li>
+                                            <li>Geometry</li>
+                                            <li>Trigonometry</li>
+                                            <li>Calculus</li>
+                                        </ul>
+                                        <!-- Add more detailed study materials here -->
+                                    </div>
+                                </div>
+                                <div id="advancedMath" class="tab-pane fade">
+                                    <div class="content">
+                                        <h2>Advanced Level Mathematics</h2>
+                                        <p>Sample Content:</p>
+                                        <ul>
+                                            <li>Differential Equations</li>
+                                            <li>Linear Algebra</li>
+                                            <li>Number Theory</li>
+                                            <li>Probability and Statistics</li>
+                                        </ul>
+                                        <!-- Add more detailed study materials here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="topicDetails" class="content p-3 border rounded">
+                                <!-- Detailed topic content will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+{% endblock %}

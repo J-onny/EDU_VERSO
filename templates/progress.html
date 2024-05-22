@@ -1,0 +1,141 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Learning assistant{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('index') }}"><h3>Intellituts App</h3></a>
+                <strong>IA</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="{{ url_for('Dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('request') }}">
+                        <i class="fas fa-image"></i>
+                        Request topic
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('quiz') }}">
+                        <i class="fas fa-image"></i>
+                        Quiz
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('history') }}">
+                        <i class="fas fa-image"></i>
+                        History
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('faq') }}">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('contact') }}">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="panel panel-default">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #47484B">
+                        <i class="fas fa-align-left"></i>
+                        <span>Collapse</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <h4>My progress</h4>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about"><em>Place holder</em></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Page Content -->
+            <div class="container-fluid d-flex flex-wrap">
+                <div class="col-md-3 bg-light p-3">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="user.png" alt="Profile Picture" class="rounded-circle me-2" width="50" height="50">
+                    <p class="h5 mb-0">John Doe</p>
+                  </div>
+                  <div class="progress mb-3">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                  </div>
+                  <div class="d-flex flex-wrap justify-content-center">
+                    <img src="badge1.png" alt="Badge 1" class="m-1" width="50" height="50">
+                    <img src="badge2.png" alt="Badge 2" class="m-1" width="50" height="50">
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title">Module 3: JavaScript Fundamentals</h5>
+                      <span class="badge bg-success">75%</span>
+                    </div>
+                    <div class="card-body">
+                      <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Lesson 1: Introduction to JavaScript
+                          <span class="badge bg-primary rounded-pill">Completed</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Lesson 2: Variables and Data Types
+                          <span class="badge bg-warning rounded-pill">In Progress</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Lesson 3: Control Flow Statements
+                          <span class="badge bg-light rounded-pill">Not Started</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="moduleDetails" class="collapse">
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2023 IntelliTuts. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+{% endblock %}
